@@ -1,0 +1,59 @@
+﻿Protocole Projet Chat
+
+MOUMINI Nourdine
+OBLETTE Edgar
+TLEMCANI Lina 17804470
+
+
+
+	Le mot clé 'WHO' : est envoyé lorsqu'un nouveau client se connecte. Il invite se dernier à s'identifier.
+Ce mot clé introduit par l'utilisateur permet aussi de lister tous les utilisateurs connecté.
+	
+	Le mot clé "IAM" : permet à tout nouvel utilisateur de s'identifier.
+Du moment que l'utilisateur n'a pas décliné son identité correctement et qu'il essaye d'écrire dans le chat le serveur lui renvoie WHO.
+	S->C == WHO
+	C->S != IAM + Pseudo
+	S->C == WHO
+
+	Le mot clé "ERR" : est renvoyé par le serveur si le pseudo choisit par le nouvel utilisateur contient un espace.
+
+	C->S == IAM + Pseu do
+	S->C == ERR + Pseu do
+	
+	Le mot clé 'TKN' : est renvoyé par le serveur si le pseudo choisit par le nouvel utilisateur est déjà utilisé.
+
+	C->S == IAM + Pseudo
+	S->C == TKN + Pseudo 
+
+	Le mot clé "ARR" : une fois l'utilisateur correctement identifié, le serveur envoie 'ARR' à tous les utilisateurs, y compris au nouveau venu, pour annoncer cette nouvelle connexion.
+
+	C->S == IAM + Pseudo	
+	S->B == ARR Pseudo
+
+
+	Le mot clé "MSG" : suivie d'un message, il permet de l'envoyer au reste des utilisateurs.
+
+
+	C->S == MSG + message
+	S->B == MSG + Pseudo (Expéditeur) + message 
+
+
+	Le mot clé "PRV" : permet d'envoyer un message privé à une personne en particulier du chat.
+
+	C->S == PRV + Pseudo (Destinateur) + message
+	S->C == PRV + Pseudo (Expéditeur) + message (Privé)
+	
+	Le mot clé 'ERR' : si l'utilisateur a demandé d'envoyer un message privé à un utilisateur qui n'existe pas, le serveur lui renvoie 'ERR'
+	
+	C->S == PRV + Pseudo (Destinateur) + message	
+	S->C == ERR + Pseudo (Expéditeur) 
+
+
+	
+	Le mot clé "BYE" : est envoyé pour signaler au serveur qu'on veuille quitter le chat.
+
+	Le mot clé 'LFT' : une fois qu'un utilisateur indique son départ du chat avec 'BYE', le serveur lui renvoie 'LFT' pour indiquer qu'il a bien accepter ça requête et fait suivre le message aux utilisateurs restant pour les prévenir du départ de ce dernier.
+
+	C->S == BYE 
+	S->B == LFT + Pseudo 
+
