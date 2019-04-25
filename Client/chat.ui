@@ -16,26 +16,22 @@
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
     <layout class="QGridLayout" name="gridLayout_2">
-     <item row="1" column="2">
-      <widget class="QPushButton" name="ui_messageSend">
-       <property name="text">
-        <string>Envoyer</string>
+     <item row="1" column="0">
+      <widget class="QLineEdit" name="ui_messageEdit">
+       <property name="placeholderText">
+        <string>Message..</string>
        </property>
       </widget>
      </item>
      <item row="1" column="1">
-      <widget class="QLineEdit" name="ui_messageEdit">
-       <property name="placeholderText">
-        <string>Message...</string>
+      <widget class="QPushButton" name="ui_messageSend">
+       <property name="text">
+        <string>Envoyer -&gt;</string>
        </property>
       </widget>
      </item>
-     <item row="0" column="0" colspan="3">
-      <widget class="QTextEdit" name="ui_messageStream">
-       <property name="textInteractionFlags">
-        <set>Qt::NoTextInteraction</set>
-       </property>
-      </widget>
+     <item row="0" column="0" colspan="2">
+      <widget class="QPlainTextEdit" name="ui_messageStream"/>
      </item>
     </layout>
    </item>

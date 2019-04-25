@@ -18,6 +18,7 @@
 #include <QMessageBox>
 #include <QTextEdit>
 #include <QWidget>
+
 #include <QTextCursor>
 #include <QListWidgetItem>
 

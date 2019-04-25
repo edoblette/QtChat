@@ -107,6 +107,9 @@ void EventHandler::IncomingMessage(std::string BrutMessage){
             if(get_chatByName(name) != nullptr){
                 ConformedMessage = name + ": " + message;
                 get_chatByName(name)->displayMsg(ConformedMessage); // ca bug la
+            }else {
+                std::cout << "erreur ici ";
+                exit(0);
             }
         }
 

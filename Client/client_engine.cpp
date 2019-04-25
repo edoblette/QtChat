@@ -124,7 +124,7 @@ void Client::HandleMessage(std::string message){
   * @param prend le message 
   */
 void Client::SendToServer(std::string message){
-    std::cout <<"message envoyer" << message <<std::endl;
+    std::cout <<"message envoyer " << message <<std::endl;
     message += '\n';
     char buffer[message.size()];
     strcpy(buffer, message.c_str());

@@ -13,6 +13,8 @@
 #define CHAT_H
 
 #include <QWidget>
+#include <QTextCursor>
+#include <QPlainTextEdit>
 class EventHandler;
 namespace Ui {
 class chat;

@@ -19,8 +19,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
     qRegisterMetaType<std::string>("std::string");
-    qRegisterMetaType<QTextCursor>("\n");
+    qRegisterMetaType<QTextCursor>("QTextCursor");
 
     this->setFixedSize(this->width(),this->height());
      // bind SIGNAL & SLOT

@@ -18,7 +18,6 @@ chat::chat(QWidget *parent, EventHandler * addrEventHandler, std::string name ) 
     ui(new Ui::chat)
 {
     ui->setupUi(this);
-    qRegisterMetaType<QTextCursor>("\n");
     pcEventHandler = addrEventHandler;
     pcEventHandler->set_chat(this, name);
     _destName = name;
@@ -30,9 +29,12 @@ chat::~chat()
 }
 
 void chat::displayMsg(std::string message){
-    std::cout << message << std::endl;
-    QString const qmessage =  QString::fromStdString(message);
-    ui->ui_messageStream->append(qmessage);
+    QString qmessage =  QString::fromStdString(message);
+    //ui->ui_messageStream->append("good !");
+
+    QPlainTextEdit *myTextEdit = ui->ui_messageStream;
+       myTextEdit->moveCursor (QTextCursor::End);
+       myTextEdit->insertPlainText(qmessage+"\n");
 }
 
 

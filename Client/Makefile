@@ -15,8 +15,8 @@ EQ            = =
 CC            = /Applications/Xcode.app/Contents/Developer/usr/bin/gcc
 CXX           = /Applications/Xcode.app/Contents/Developer/usr/bin/g++
 DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
-CFLAGS        = -pipe -O2 $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.12 -Wall -W -fPIC $(DEFINES)
-CXXFLAGS      = -pipe -O2 -std=gnu++1z $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.12 -Wall -W -fPIC $(DEFINES)
+CFLAGS        = -pipe -O2 $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.9 -Wall -W -fPIC $(DEFINES)
+CXXFLAGS      = -pipe -stdlib=libc++ -O2 -std=gnu++1z $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.9 -Wall -W -fPIC $(DEFINES)
 INCPATH       = -I. -I../../../../Qt/5.12.2/clang_64/lib/QtWidgets.framework/Headers -I../../../../Qt/5.12.2/clang_64/lib/QtGui.framework/Headers -I../../../../Qt/5.12.2/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/Applications/Xcode10.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/Applications/Xcode10.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/AGL.framework/Headers/ -I. -I../../../../Qt/5.12.2/clang_64/mkspecs/macx-g++ -F/Users/fac/Qt/5.12.2/clang_64/lib
 QMAKE         = /Users/fac/Qt/5.12.2/clang_64/bin/qmake
 DEL_FILE      = rm -f
@@ -39,7 +39,7 @@ COMPRESS      = gzip -9f
 DISTNAME      = Gui_projet_reseau1.0.0
 DISTDIR = /Users/fac/Documents/s4/Reseaux\ -\ Rauzy/Gui_projet_reseau/.tmp/Gui_projet_reseau1.0.0
 LINK          = /Applications/Xcode.app/Contents/Developer/usr/bin/g++
-LFLAGS        = -headerpad_max_install_names $(EXPORT_ARCH_ARGS) -Wl,-syslibroot,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.12 -Wl,-rpath,@executable_path/../Frameworks -Wl,-rpath,/Users/fac/Qt/5.12.2/clang_64/lib
+LFLAGS        = -headerpad_max_install_names $(EXPORT_ARCH_ARGS) -Wl,-syslibroot,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.9 -Wl,-rpath,@executable_path/../Frameworks -Wl,-rpath,/Users/fac/Qt/5.12.2/clang_64/lib
 LIBS          = $(SUBLIBS) -F/Users/fac/Qt/5.12.2/clang_64/lib -framework QtWidgets -framework QtGui -framework QtCore -framework DiskArbitration -framework IOKit -framework OpenGL -framework AGL   
 AR            = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar cq
 RANLIB        = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib -s
@@ -708,7 +708,7 @@ Gui_projet_reseau.app/Contents/Resources/empty.lproj:
 Gui_projet_reseau.app/Contents/Info.plist: 
 	@test -d Gui_projet_reseau.app/Contents || mkdir -p Gui_projet_reseau.app/Contents
 	@$(DEL_FILE) Gui_projet_reseau.app/Contents/Info.plist
-	@sed -e "s,@SHORT_VERSION@,1.0,g" -e "s,\$${QMAKE_SHORT_VERSION},1.0,g" -e "s,@FULL_VERSION@,1.0.0,g" -e "s,\$${QMAKE_FULL_VERSION},1.0.0,g" -e "s,@TYPEINFO@,????,g" -e "s,\$${QMAKE_PKGINFO_TYPEINFO},????,g" -e "s,@BUNDLEIDENTIFIER@,com.yourcompany.Gui-projet-reseau,g" -e "s,\$${PRODUCT_BUNDLE_IDENTIFIER},com.yourcompany.Gui-projet-reseau,g" -e "s,\$${MACOSX_DEPLOYMENT_TARGET},10.12,g" -e "s,\$${IPHONEOS_DEPLOYMENT_TARGET},,g" -e "s,\$${TVOS_DEPLOYMENT_TARGET},,g" -e "s,\$${WATCHOS_DEPLOYMENT_TARGET},,g" -e "s,@ICON@,message_icon.png,g" -e "s,\$${ASSETCATALOG_COMPILER_APPICON_NAME},message_icon.png,g" -e "s,@EXECUTABLE@,Gui_projet_reseau,g" -e "s,@LIBRARY@,Gui_projet_reseau,g" -e "s,\$${EXECUTABLE_NAME},Gui_projet_reseau,g" -e "s,@TYPEINFO@,????,g" -e "s,\$${QMAKE_PKGINFO_TYPEINFO},????,g" ../../../../Qt/5.12.2/clang_64/mkspecs/macx-g++/Info.plist.app >Gui_projet_reseau.app/Contents/Info.plist
+	@sed -e "s,@SHORT_VERSION@,1.0,g" -e "s,\$${QMAKE_SHORT_VERSION},1.0,g" -e "s,@FULL_VERSION@,1.0.0,g" -e "s,\$${QMAKE_FULL_VERSION},1.0.0,g" -e "s,@TYPEINFO@,????,g" -e "s,\$${QMAKE_PKGINFO_TYPEINFO},????,g" -e "s,@BUNDLEIDENTIFIER@,edgar.Gui-projet-reseau,g" -e "s,\$${PRODUCT_BUNDLE_IDENTIFIER},edgar.Gui-projet-reseau,g" -e "s,\$${MACOSX_DEPLOYMENT_TARGET},10.9,g" -e "s,\$${IPHONEOS_DEPLOYMENT_TARGET},,g" -e "s,\$${TVOS_DEPLOYMENT_TARGET},,g" -e "s,\$${WATCHOS_DEPLOYMENT_TARGET},,g" -e "s,@ICON@,message_icon.png,g" -e "s,\$${ASSETCATALOG_COMPILER_APPICON_NAME},message_icon.png,g" -e "s,@EXECUTABLE@,Gui_projet_reseau,g" -e "s,@LIBRARY@,Gui_projet_reseau,g" -e "s,\$${EXECUTABLE_NAME},Gui_projet_reseau,g" -e "s,@TYPEINFO@,????,g" -e "s,\$${QMAKE_PKGINFO_TYPEINFO},????,g" ../../../../Qt/5.12.2/clang_64/mkspecs/macx-g++/Info.plist.app >Gui_projet_reseau.app/Contents/Info.plist
 Gui_projet_reseau.app/Contents/Resources/message_icon.png: message_icon.png
 	@test -d Gui_projet_reseau.app/Contents/Resources/ || mkdir -p Gui_projet_reseau.app/Contents/Resources/
 	@$(DEL_FILE) Gui_projet_reseau.app/Contents/Resources/message_icon.png
@@ -767,7 +767,7 @@ compiler_moc_predefs_make_all: moc_predefs.h
 compiler_moc_predefs_clean:
 	-$(DEL_FILE) moc_predefs.h
 moc_predefs.h: ../../../../Qt/5.12.2/clang_64/mkspecs/features/data/dummy.cpp
-	/Applications/Xcode.app/Contents/Developer/usr/bin/g++ -pipe -O2 -std=gnu++1z $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.12 -Wall -W -dM -E -o moc_predefs.h ../../../../Qt/5.12.2/clang_64/mkspecs/features/data/dummy.cpp
+	/Applications/Xcode.app/Contents/Developer/usr/bin/g++ -pipe -stdlib=libc++ -O2 -std=gnu++1z $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.9 -Wall -W -dM -E -o moc_predefs.h ../../../../Qt/5.12.2/clang_64/mkspecs/features/data/dummy.cpp
 
 compiler_moc_header_make_all: moc_mainwindow.cpp moc_connectpage.cpp moc_privatemessagetab.cpp moc_chat.cpp
 compiler_moc_header_clean:
@@ -812,6 +812,10 @@ moc_privatemessagetab.cpp: privatemessagetab.h \
 moc_chat.cpp: chat.h \
 		../../../../Qt/5.12.2/clang_64/lib/QtWidgets.framework/Headers/QWidget \
 		../../../../Qt/5.12.2/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		../../../../Qt/5.12.2/clang_64/lib/QtGui.framework/Headers/QTextCursor \
+		../../../../Qt/5.12.2/clang_64/lib/QtGui.framework/Headers/qtextcursor.h \
+		../../../../Qt/5.12.2/clang_64/lib/QtWidgets.framework/Headers/QPlainTextEdit \
+		../../../../Qt/5.12.2/clang_64/lib/QtWidgets.framework/Headers/qplaintextedit.h \
 		moc_predefs.h \
 		../../../../Qt/5.12.2/clang_64/bin/moc
 	/Users/fac/Qt/5.12.2/clang_64/bin/moc $(DEFINES) --include '/Users/fac/Documents/s4/Reseaux - Rauzy/Gui_projet_reseau/moc_predefs.h' -I/Users/fac/Qt/5.12.2/clang_64/mkspecs/macx-g++ -I'/Users/fac/Documents/s4/Reseaux - Rauzy/Gui_projet_reseau' -I/Users/fac/Qt/5.12.2/clang_64/lib/QtWidgets.framework/Headers -I/Users/fac/Qt/5.12.2/clang_64/lib/QtGui.framework/Headers -I/Users/fac/Qt/5.12.2/clang_64/lib/QtCore.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include -F/Users/fac/Qt/5.12.2/clang_64/lib chat.h -o moc_chat.cpp
@@ -877,6 +881,8 @@ main.o: main.cpp eventshandler.hpp \
 		../../../../Qt/5.12.2/clang_64/lib/QtCore.framework/Headers/QObject \
 		../../../../Qt/5.12.2/clang_64/lib/QtCore.framework/Headers/qobject.h \
 		chat.h \
+		../../../../Qt/5.12.2/clang_64/lib/QtWidgets.framework/Headers/QPlainTextEdit \
+		../../../../Qt/5.12.2/clang_64/lib/QtWidgets.framework/Headers/qplaintextedit.h \
 		../../../../Qt/5.12.2/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../../../Qt/5.12.2/clang_64/lib/QtWidgets.framework/Headers/qapplication.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
@@ -906,7 +912,9 @@ client_engine.o: client_engine.cpp eventshandler.hpp \
 		../../../../Qt/5.12.2/clang_64/lib/QtCore.framework/Headers/qstring.h \
 		../../../../Qt/5.12.2/clang_64/lib/QtCore.framework/Headers/QObject \
 		../../../../Qt/5.12.2/clang_64/lib/QtCore.framework/Headers/qobject.h \
-		chat.h
+		chat.h \
+		../../../../Qt/5.12.2/clang_64/lib/QtWidgets.framework/Headers/QPlainTextEdit \
+		../../../../Qt/5.12.2/clang_64/lib/QtWidgets.framework/Headers/qplaintextedit.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o client_engine.o client_engine.cpp
 
 mainwindow.o: mainwindow.cpp eventshandler.hpp \
@@ -935,6 +943,8 @@ mainwindow.o: mainwindow.cpp eventshandler.hpp \
 		../../../../Qt/5.12.2/clang_64/lib/QtCore.framework/Headers/QObject \
 		../../../../Qt/5.12.2/clang_64/lib/QtCore.framework/Headers/qobject.h \
 		chat.h \
+		../../../../Qt/5.12.2/clang_64/lib/QtWidgets.framework/Headers/QPlainTextEdit \
+		../../../../Qt/5.12.2/clang_64/lib/QtWidgets.framework/Headers/qplaintextedit.h \
 		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o mainwindow.cpp
 
@@ -963,7 +973,9 @@ eventshandler.o: eventshandler.cpp eventshandler.hpp \
 		../../../../Qt/5.12.2/clang_64/lib/QtCore.framework/Headers/qstring.h \
 		../../../../Qt/5.12.2/clang_64/lib/QtCore.framework/Headers/QObject \
 		../../../../Qt/5.12.2/clang_64/lib/QtCore.framework/Headers/qobject.h \
-		chat.h
+		chat.h \
+		../../../../Qt/5.12.2/clang_64/lib/QtWidgets.framework/Headers/QPlainTextEdit \
+		../../../../Qt/5.12.2/clang_64/lib/QtWidgets.framework/Headers/qplaintextedit.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o eventshandler.o eventshandler.cpp
 
 connectpage.o: connectpage.cpp eventshandler.hpp \
@@ -992,6 +1004,8 @@ connectpage.o: connectpage.cpp eventshandler.hpp \
 		../../../../Qt/5.12.2/clang_64/lib/QtCore.framework/Headers/QObject \
 		../../../../Qt/5.12.2/clang_64/lib/QtCore.framework/Headers/qobject.h \
 		chat.h \
+		../../../../Qt/5.12.2/clang_64/lib/QtWidgets.framework/Headers/QPlainTextEdit \
+		../../../../Qt/5.12.2/clang_64/lib/QtWidgets.framework/Headers/qplaintextedit.h \
 		ui_connectpage.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o connectpage.o connectpage.cpp
 
@@ -1021,6 +1035,8 @@ privatemessagetab.o: privatemessagetab.cpp eventshandler.hpp \
 		../../../../Qt/5.12.2/clang_64/lib/QtCore.framework/Headers/QObject \
 		../../../../Qt/5.12.2/clang_64/lib/QtCore.framework/Headers/qobject.h \
 		chat.h \
+		../../../../Qt/5.12.2/clang_64/lib/QtWidgets.framework/Headers/QPlainTextEdit \
+		../../../../Qt/5.12.2/clang_64/lib/QtWidgets.framework/Headers/qplaintextedit.h \
 		ui_privatemessagetab.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o privatemessagetab.o privatemessagetab.cpp
 
@@ -1050,7 +1066,9 @@ chat.o: chat.cpp ui_chat.h \
 		../../../../Qt/5.12.2/clang_64/lib/QtCore.framework/Headers/qstring.h \
 		../../../../Qt/5.12.2/clang_64/lib/QtCore.framework/Headers/QObject \
 		../../../../Qt/5.12.2/clang_64/lib/QtCore.framework/Headers/qobject.h \
-		chat.h
+		chat.h \
+		../../../../Qt/5.12.2/clang_64/lib/QtWidgets.framework/Headers/QPlainTextEdit \
+		../../../../Qt/5.12.2/clang_64/lib/QtWidgets.framework/Headers/qplaintextedit.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o chat.o chat.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
